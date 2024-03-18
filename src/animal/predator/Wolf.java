@@ -1,0 +1,26 @@
+package animal.predator;
+
+import animal.Animal;
+import title.NamesAnimal;
+
+import java.util.Map;
+
+public class Wolf extends Animal {
+    {
+        setAnimalName(NamesAnimal.WOLF);
+        setWeight(50);
+        setSpeed(3);
+        setMaxSaturation(8);
+        setLuck(Map.ofEntries(
+                Map.entry(NamesAnimal.HORSE, 10),
+                Map.entry(NamesAnimal.DEER, 15),
+                Map.entry(NamesAnimal.RABBIT, 60),
+                Map.entry(NamesAnimal.MOUSE, 80),
+                Map.entry(NamesAnimal.GOAT, 60),
+                Map.entry(NamesAnimal.SHEEP, 70),
+                Map.entry(NamesAnimal.HOG, 15),
+                Map.entry(NamesAnimal.BUFFALO, 10),
+                Map.entry(NamesAnimal.DUCK, 40)
+        ));
+    }
+}

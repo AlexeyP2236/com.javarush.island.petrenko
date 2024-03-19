@@ -3,7 +3,6 @@ package animal;
 import animal.action.Eat;
 import animal.action.Move;
 import animal.action.Reproduce;
-import title.NamesAnimal;
 
 import java.util.List;
 import java.util.Map;
@@ -15,9 +14,11 @@ public abstract class Animal implements Reproduce, Eat, Move {
     private double weight;
     private int speed;
     private boolean hunger;
-    private boolean saturation;
+    private boolean isSaturation;
+    private double saturationNumber;
     private double maxSaturation;
     private Map<String, Integer> luck;
+
     public Animal() {
     }
 
@@ -25,6 +26,7 @@ public abstract class Animal implements Reproduce, Eat, Move {
     public String getAnimalName() {
         return animalName;
     }
+
     public void setAnimalName(String animalName) {
         this.animalName = animalName;
     }
@@ -54,11 +56,19 @@ public abstract class Animal implements Reproduce, Eat, Move {
     }
 
     public boolean isSaturation() {
-        return saturation;
+        return isSaturation;
     }
 
-    public void setSaturation(boolean saturation) {
-        this.saturation = saturation;
+    public void setSaturation(boolean isSaturation) {
+        this.isSaturation = isSaturation;
+    }
+
+    public double getSaturationNumber() {
+        return saturationNumber;
+    }
+
+    public void setSaturationNumber(double saturationNumber) {
+        this.saturationNumber = saturationNumber;
     }
 
     public double getMaxSaturation() {
@@ -83,9 +93,26 @@ public abstract class Animal implements Reproduce, Eat, Move {
 
     @Override
     public void eat(Set<Animal> animalsOnLocation) {
-
+        if (saturationNumber < maxSaturation) {
+            saturationNumber = probabilityExtraction(animalsOnLocation, getLuck(), saturationNumber);
+        }
+        if (saturationNumber >= maxSaturation) {
+            setSaturation(true);
+            for (Animal animal : animalsOnLocation) {
+                if (getAnimalName().equals(animal.getAnimalName()) && isSaturation == animal.isSaturation) {
+                        int i = ThreadLocalRandom.current().nextInt(1,3);
+                        while (i > 0){
+                            animalsOnLocation.add(animal);
+                            i--;
+                        }
+                    setSaturation(false);
+                    animal.setSaturation(false);
+                }
+            }
+        }
     }
 
+    // здесь реализовать смерть животного
     @Override
     public void move(List<List<Set<Animal>>> location) {
 
@@ -97,7 +124,7 @@ public abstract class Animal implements Reproduce, Eat, Move {
                 "animalName='" + animalName + '\'' +
                 ", weight=" + weight +
                 ", speed=" + speed +
-                ", saturation=" + saturation +
+                ", saturation=" + isSaturation +
                 ", maxSaturation=" + maxSaturation +
                 ", luck=" + luck +
                 '}';

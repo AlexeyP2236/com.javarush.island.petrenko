@@ -17,4 +17,8 @@ public class Buffalo extends Animal {
                 Map.entry(NamesAnimal.PLANT, 100)
         ));
     }
+
+    public Buffalo(int id) {
+        super(id);
+    }
 }

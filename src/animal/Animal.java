@@ -3,6 +3,8 @@ package animal;
 import animal.action.Eat;
 import animal.action.Move;
 import animal.action.Reproduce;
+import animal.plant.Plant;
+import island.Island;
 
 import java.util.List;
 import java.util.Map;
@@ -10,6 +12,7 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Animal implements Reproduce, Eat, Move {
+    private int id;
     private String animalName;
     private double weight;
     private int speed;
@@ -19,10 +22,16 @@ public abstract class Animal implements Reproduce, Eat, Move {
     private double maxSaturation;
     private Map<String, Integer> luck;
 
-    public Animal() {
+    public Animal(int id) {
+        this.id = id;
     }
 
     //getter and setter
+
+    public int getId() {
+        return id;
+    }
+
     public String getAnimalName() {
         return animalName;
     }
@@ -99,16 +108,21 @@ public abstract class Animal implements Reproduce, Eat, Move {
         if (saturationNumber >= maxSaturation) {
             setSaturation(true);
             for (Animal animal : animalsOnLocation) {
-                if (getAnimalName().equals(animal.getAnimalName()) && isSaturation == animal.isSaturation) {
-                        int i = ThreadLocalRandom.current().nextInt(1,3);
-                        while (i > 0){
-                            animalsOnLocation.add(animal);
-                            i--;
-                        }
+                if (getAnimalName().equals(animal.getAnimalName()) && isSaturation == animal.isSaturation && id != animal.getId()) {
                     setSaturation(false);
                     animal.setSaturation(false);
+                    setSaturationNumber(0);
+                    //reproduce(animalsOnLocation, animal);
                 }
             }
+        }
+    }
+
+    public void reproduce(Set<Animal> animalsOnLocation) {
+        int i = ThreadLocalRandom.current().nextInt(1, 3);
+        while (i > 0) {
+            animalsOnLocation.add(new Plant(9));
+            i--;
         }
     }
 
@@ -121,10 +135,13 @@ public abstract class Animal implements Reproduce, Eat, Move {
     @Override
     public String toString() {
         return "Animal{" +
-                "animalName='" + animalName + '\'' +
+                "id=" + id +
+                ", animalName='" + animalName + '\'' +
                 ", weight=" + weight +
                 ", speed=" + speed +
-                ", saturation=" + isSaturation +
+                ", hunger=" + hunger +
+                ", isSaturation=" + isSaturation +
+                ", saturationNumber=" + saturationNumber +
                 ", maxSaturation=" + maxSaturation +
                 ", luck=" + luck +
                 '}';

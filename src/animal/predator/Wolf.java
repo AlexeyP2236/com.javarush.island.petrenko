@@ -23,4 +23,8 @@ public class Wolf extends Animal {
                 Map.entry(NamesAnimal.DUCK, 40)
         ));
     }
+
+    public Wolf(int id) {
+        super(id);
+    }
 }

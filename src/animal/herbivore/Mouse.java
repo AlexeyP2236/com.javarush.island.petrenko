@@ -17,4 +17,8 @@ public class Mouse extends Animal {
                 Map.entry(NamesAnimal.PLANT, 100)
         ));
     }
+
+    public Mouse(int id) {
+        super(id);
+    }
 }

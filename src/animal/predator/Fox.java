@@ -19,4 +19,8 @@ public class Fox extends Animal {
                 Map.entry(NamesAnimal.CATERPILLAR, 40)
         ));
     }
+
+    public Fox(int id) {
+        super(id);
+    }
 }

@@ -19,4 +19,8 @@ public class Eagle extends Animal {
                 Map.entry(NamesAnimal.DUCK, 80)
         ));
     }
+
+    public Eagle(int id) {
+        super(id);
+    }
 }

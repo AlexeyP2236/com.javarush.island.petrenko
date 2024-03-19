@@ -18,4 +18,8 @@ public class Caterpillar extends Animal {
                 Map.entry(NamesAnimal.PLANT, 100)
         ));
     }
+
+    public Caterpillar(int id) {
+        super(id);
+    }
 }

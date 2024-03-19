@@ -16,4 +16,8 @@ public class Goat extends Animal {
                 Map.entry(NamesAnimal.PLANT, 100)
         ));
     }
+
+    public Goat(int id) {
+        super(id);
+    }
 }

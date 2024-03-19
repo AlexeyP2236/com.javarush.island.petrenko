@@ -25,4 +25,8 @@ public class Bear extends Animal {
                 Map.entry(NamesAnimal.DUCK, 10)
         ));
     }
+
+    public Bear(int id) {
+        super(id);
+    }
 }

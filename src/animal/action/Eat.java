@@ -12,10 +12,11 @@ public interface Eat {
 
     default double probabilityExtraction(Set<Animal> animalsOnLocation, Map<String, Integer> getLuck, double saturationNumber) {
         out:
-        //проверяется удача
-        for (Map.Entry<String, Integer> luck : getLuck.entrySet()) {
-            // ищется на локации животное
-            for (Animal animalEaten : animalsOnLocation) {
+
+        // ищется на локации животное
+        for (Animal animalEaten : animalsOnLocation) {
+            //проверяется удача
+            for (Map.Entry<String, Integer> luck : getLuck.entrySet()) {
                 int chance = ThreadLocalRandom.current().nextInt(100);
                 // если совпадает
                 if (luck.getKey().equals(animalEaten.getAnimalName()) && luck.getValue() >= chance) {

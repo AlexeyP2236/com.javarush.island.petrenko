@@ -15,4 +15,7 @@ public class Plant extends Animal {
         setMaxSaturation(-1);
     }
 
+    public Plant(int id) {
+        super(id);
+    }
 }

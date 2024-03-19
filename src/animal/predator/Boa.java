@@ -18,4 +18,8 @@ public class Boa extends Animal {
                 Map.entry(NamesAnimal.DUCK, 10)
         ));
     }
+
+    public Boa(int id) {
+        super(id);
+    }
 }

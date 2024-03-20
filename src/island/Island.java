@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Island {
-    private int id;
+    private int globalId;
     private List<List<List<Animal>>> location = new ArrayList<>();
     private int width;
     private int height;
@@ -38,40 +38,42 @@ public class Island {
 //    }
 
     public void initialIsland() {
-//        for (int i = 0; i < locationNew.length; i++) {
-//            for (int j = 0; j < locationNew[i].length; j++) {
-//                locationNew[i][j].animals.add(new Plant(getId()));
-//                locationNew[i][j].animals.add(new Plant(getId()));
-//                locationNew[i][j].animals.add(new Plant(getId()));
-//                locationNew[i][j].animals.add(new Plant(getId()));
-//                locationNew[i][j].animals.add(new Plant(getId()));
-////                locationNew[i][j] = new Location(new Plant(getId()));
-////                locationNew[i][j] = new Location(new Plant(getId()));
-////                locationNew[i][j] = new Location(new Plant(getId()));
-////                locationNew[i][j] = new Location(new Mouse(getId()));
-//            }
-//        }
-
-
-        for (int i = 0; i < width; i++) {
-            location.add(new ArrayList<>());
-            for (int j = 0; j < height; j++) {
-                location.get(i).add(new ArrayList<>());
-                location.get(i).get(j).add(new Plant(getId()));
-                location.get(i).get(j).add(new Plant(getId()));
-                location.get(i).get(j).add(new Plant(getId()));
-                location.get(i).get(j).add(new Plant(getId()));
-                location.get(i).get(j).add(new Mouse(getId()));
-                location.get(i).get(j).add(new Mouse(getId()));
-                location.get(i).get(j).add(new Mouse(getId()));
+        for (int i = 0; i < locationNew.length; i++) {
+            for (int j = 0; j < locationNew[i].length; j++) {
+                locationNew[i][j] = new Location();
+                locationNew[i][j].animals.add(new Plant(getGlobalId()));
+                locationNew[i][j].animals.add(new Plant(getGlobalId()));
+                locationNew[i][j].animals.add(new Plant(getGlobalId()));
+                locationNew[i][j].animals.add(new Plant(getGlobalId()));
+                locationNew[i][j].animals.add(new Mouse(getGlobalId()));
             }
         }
+
+
+//        for (int i = 0; i < width; i++) {
+//            location.add(new ArrayList<>());
+//            for (int j = 0; j < height; j++) {
+//                location.get(i).add(new ArrayList<>());
+//                location.get(i).get(j).add(new Plant(getId()));
+//                location.get(i).get(j).add(new Plant(getId()));
+//                location.get(i).get(j).add(new Plant(getId()));
+//                location.get(i).get(j).add(new Plant(getId()));
+//                location.get(i).get(j).add(new Mouse(getId()));
+//                location.get(i).get(j).add(new Mouse(getId()));
+//                location.get(i).get(j).add(new Mouse(getId()));
+//            }
+//        }
     }
 
     //возможное решение ConcurrentModificationException
     //https://stackoverflow.com/questions/8104692/how-to-avoid-java-util-concurrentmodificationexception-when-iterating-through-an
     //https://habr.com/ru/articles/325426/
     public void test() {
+        for (int i = 0; i < locationNew.length; i++) {
+            for (int j = 0; j < locationNew[i].length; j++) {
+                locationNew[i][j].animals.forEach(animal -> animal.eat(animals, getGlobalId()));
+            }
+        }
 //        List<Animal> hex = location.get(0).get(0);
 //        for (int i = 0; i < hex.size(); i++) {
 //            reproduce(hex);
@@ -98,7 +100,7 @@ public class Island {
 
     }
 
-    public int getId() {
-        return id++;
+    public int getGlobalId() {
+        return globalId++;
     }
 }

@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public interface Eat {
-    void eat(Set<Animal> animalOnLocation);
+    void eat(Set<Animal> animalOnLocation, int id);
 
     default double probabilityExtraction(Set<Animal> animalsOnLocation, Map<String, Integer> getLuck, double saturationNumber) {
         out:

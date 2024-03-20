@@ -9,7 +9,7 @@ public class Location {
 
 
     // private int id;
-    public static Set<Animal> animals = new HashSet<>();
+    public Set<Animal> animals = new HashSet<>();
 
     public Location(Animal animal) {
        // id++;

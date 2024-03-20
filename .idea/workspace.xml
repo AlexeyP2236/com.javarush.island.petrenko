@@ -5,30 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64b9011e-7a0f-48f1-ad77-e0fc80f6233a" name="Changes" comment="save 24.03.18">
-      <change afterPath="$PROJECT_DIR$/src/island/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/animal/action/Eat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/action/Eat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/action/Reproduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/action/Reproduce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/herbivore/Buffalo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Caterpillar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/herbivore/Caterpillar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/herbivore/Deer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/herbivore/Duck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/herbivore/Goat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Hog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/herbivore/Hog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/herbivore/Horse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/herbivore/Mouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/herbivore/Rabbit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/herbivore/Sheep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/plant/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/plant/Plant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/predator/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/predator/Bear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/predator/Boa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/predator/Boa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/predator/Eagle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/predator/Eagle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/predator/Fox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/predator/Fox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/predator/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/predator/Wolf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/island/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/Island.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/island/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/Location.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,14 +36,15 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -95,30 +79,12 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/animal/Animal.java</url>
-          <line>103</line>
-          <properties class="animal.Animal" method="eat">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>39</line>
-          <properties class="island.Island" method="initialIsland">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
+          <line>43</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="island.Location" memberName="animals" />
-      </pinned-members>
-    </pin-to-top-manager>
   </component>
 </project>

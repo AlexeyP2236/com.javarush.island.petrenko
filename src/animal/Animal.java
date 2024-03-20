@@ -101,7 +101,7 @@ public abstract class Animal implements Reproduce, Eat, Move {
     }
 
     @Override
-    public void eat(Set<Animal> animalsOnLocation) {
+    public void eat(Set<Animal> animalsOnLocation, int globalId) {
         if (saturationNumber < maxSaturation) {
             saturationNumber = probabilityExtraction(animalsOnLocation, getLuck(), saturationNumber);
         }
@@ -112,14 +112,17 @@ public abstract class Animal implements Reproduce, Eat, Move {
                     setSaturation(false);
                     animal.setSaturation(false);
                     setSaturationNumber(0);
-                    //reproduce(animalsOnLocation, animal);
+                    reproduce(animalsOnLocation, globalId);
                 }
             }
         }
     }
 
-    public void reproduce(Set<Animal> animalsOnLocation) {
+    // слабый вариант создать новую таблицу и загрузить в нее, потом отправить назад, пока только для set, для list циклы
+    // https://www.coderanch.com/t/572287/java/ConcurrentModificationException-HashSet-recursion
+    public void reproduce(Set<Animal> animalsOnLocation, int id) {
         int i = ThreadLocalRandom.current().nextInt(1, 3);
+
         while (i > 0) {
             animalsOnLocation.add(new Plant(9));
             i--;

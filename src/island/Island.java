@@ -1,106 +1,49 @@
 package island;
 
-import animal.Animal;
-import animal.herbivore.Mouse;
-import animal.plant.Plant;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
+import util.Id;
+import entity.animal.herbivore.Mouse;
+import entity.animal.herbivore.Rabbit;
+import entity.Plant;
+import entity.animal.predator.Eagle;
 
 public class Island {
-    private int globalId;
-    private List<List<List<Animal>>> location = new ArrayList<>();
-    private int width;
-    private int height;
+    public Location[][] locationNew;
 
-    public Set<Animal> animals = new HashSet<>();
-
-    public Location[][] locationNew = new Location[width + 1][height + 1];
-
-    public Island(Set<Animal> animals) {
-        this.animals = animals;
+    public Island() {
     }
 
     public Island(int width, int height) {
-        this.width = width;
-        this.height = height;
+        locationNew = new Location[width][height];
     }
 
-    public List<List<List<Animal>>> getLocation() {
-        return location;
-    }
-
-//    public void setLocation(List<List<Set<Animal>>> location) {
-//        this.location = location;
-//    }
-
+    // для рандома можно сделать отдельную функцию и передать в конструктор, отдельно вставить траву
     public void initialIsland() {
         for (int i = 0; i < locationNew.length; i++) {
             for (int j = 0; j < locationNew[i].length; j++) {
                 locationNew[i][j] = new Location();
-                locationNew[i][j].animals.add(new Plant(getGlobalId()));
-                locationNew[i][j].animals.add(new Plant(getGlobalId()));
-                locationNew[i][j].animals.add(new Plant(getGlobalId()));
-                locationNew[i][j].animals.add(new Plant(getGlobalId()));
-                locationNew[i][j].animals.add(new Mouse(getGlobalId()));
+                locationNew[i][j].plants.add(new Plant());
+                locationNew[i][j].plants.add(new Plant());
+                locationNew[i][j].plants.add(new Plant());
+                locationNew[i][j].plants.add(new Plant());
+                locationNew[i][j].plants.add(new Plant());
+                locationNew[i][j].plants.add(new Plant());
+                locationNew[i][j].animals.add(new Mouse(Id.next()));
+                locationNew[i][j].animals.add(new Rabbit(Id.next()));
+                locationNew[i][j].animals.add(new Rabbit(Id.next()));
+                locationNew[i][j].animals.add(new Rabbit(Id.next()));
+                locationNew[i][j].animals.add(new Rabbit(Id.next()));
+                locationNew[i][j].animals.add(new Eagle(Id.next()));
+                locationNew[i][j].animals.add(new Eagle(Id.next()));
             }
         }
-
-
-//        for (int i = 0; i < width; i++) {
-//            location.add(new ArrayList<>());
-//            for (int j = 0; j < height; j++) {
-//                location.get(i).add(new ArrayList<>());
-//                location.get(i).get(j).add(new Plant(getId()));
-//                location.get(i).get(j).add(new Plant(getId()));
-//                location.get(i).get(j).add(new Plant(getId()));
-//                location.get(i).get(j).add(new Plant(getId()));
-//                location.get(i).get(j).add(new Mouse(getId()));
-//                location.get(i).get(j).add(new Mouse(getId()));
-//                location.get(i).get(j).add(new Mouse(getId()));
-//            }
-//        }
     }
 
-    //возможное решение ConcurrentModificationException
-    //https://stackoverflow.com/questions/8104692/how-to-avoid-java-util-concurrentmodificationexception-when-iterating-through-an
-    //https://habr.com/ru/articles/325426/
     public void test() {
         for (int i = 0; i < locationNew.length; i++) {
             for (int j = 0; j < locationNew[i].length; j++) {
-                locationNew[i][j].animals.forEach(animal -> animal.eat(animals, getGlobalId()));
+                locationNew[i][j].animalsEat();
+                locationNew[i][j].animalsReproduce();
             }
         }
-//        List<Animal> hex = location.get(0).get(0);
-//        for (int i = 0; i < hex.size(); i++) {
-//            reproduce(hex);
-//        }
-//        for (Animal animal : hex) {
-////            animal.eat(hex);
-//
-//        }
-//        location.forEach(list1 -> list1
-//                .forEach(list2 -> list2
-//                        .forEach(
-//                                animal -> {
-//                                    animal.eat(hex);
-//                                }
-//                        )));
-    }
-
-    public void reproduce(List<Animal> animalsOnLocation) {
-        int i = ThreadLocalRandom.current().nextInt(1, 3);
-        while (i > 0) {
-            animalsOnLocation.add(new Plant(9));
-            i--;
-        }
-
-    }
-
-    public int getGlobalId() {
-        return globalId++;
     }
 }

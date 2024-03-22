@@ -1,6 +1,6 @@
-package animal.herbivore;
+package entity.animal.herbivore;
 
-import animal.Animal;
+import entity.animal.Animal;
 import title.NamesAnimal;
 
 import java.util.List;

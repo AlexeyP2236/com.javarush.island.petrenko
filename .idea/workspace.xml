@@ -4,12 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64b9011e-7a0f-48f1-ad77-e0fc80f6233a" name="Changes" comment="save 24.03.18">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="64b9011e-7a0f-48f1-ad77-e0fc80f6233a" name="Changes" comment="save 24.03.20">
+      <change afterPath="$PROJECT_DIR$/src/util/Clearing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/Id.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animal/action/Eat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/animal/action/Eat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/action/Eat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/action/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/action/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/action/Reproduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/action/Reproduce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Buffalo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Caterpillar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Caterpillar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Deer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Goat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Hog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Hog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Horse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Rabbit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/herbivore/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Sheep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/plant/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/predator/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Bear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/predator/Boa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Boa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/predator/Eagle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Eagle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/predator/Fox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Fox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/animal/predator/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Wolf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/island/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/Island.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/island/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/Location.java" afterDir="false" />
     </list>
@@ -21,6 +40,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -42,9 +62,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="island" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -69,20 +95,33 @@
       <option name="project" value="LOCAL" />
       <updated>1710783691638</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="save 24.03.20">
+      <option name="closed" value="true" />
+      <created>1710912026593</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710912026594</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="save 24.03.18" />
-    <option name="LAST_COMMIT_MESSAGE" value="save 24.03.18" />
+    <MESSAGE value="save 24.03.20" />
+    <option name="LAST_COMMIT_MESSAGE" value="save 24.03.20" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="1" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/island/Location.java</url>
+          <line>28</line>
+          <properties class="island.Location" method="animalsReproduce">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

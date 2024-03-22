@@ -1,6 +1,6 @@
-package animal.action;
+package entity.animal.action;
 
-import animal.Animal;
+import entity.animal.Animal;
 
 import java.util.List;
 import java.util.Set;

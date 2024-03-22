@@ -1,25 +1,23 @@
-package animal;
+package entity.animal;
 
-import animal.action.Eat;
-import animal.action.Move;
-import animal.action.Reproduce;
-import animal.plant.Plant;
-import island.Island;
+import entity.animal.action.Reproduce;
+import entity.animal.action.Eat;
+import entity.animal.action.Move;
+import entity.Plant;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.*;
 
-public abstract class Animal implements Reproduce, Eat, Move {
+public abstract class Animal {
     private int id;
     private String animalName;
     private double weight;
     private int speed;
     private boolean hunger;
-    private boolean isSaturation;
+    private boolean saturation;
     private double saturationNumber;
     private double maxSaturation;
+    private boolean predator;
+    private boolean dead;
     private Map<String, Integer> luck;
 
     public Animal(int id) {
@@ -65,11 +63,11 @@ public abstract class Animal implements Reproduce, Eat, Move {
     }
 
     public boolean isSaturation() {
-        return isSaturation;
+        return saturation;
     }
 
     public void setSaturation(boolean isSaturation) {
-        this.isSaturation = isSaturation;
+        this.saturation = isSaturation;
     }
 
     public double getSaturationNumber() {
@@ -100,38 +98,40 @@ public abstract class Animal implements Reproduce, Eat, Move {
         this.luck.put(s, i);
     }
 
-    @Override
-    public void eat(Set<Animal> animalsOnLocation, int globalId) {
-        if (saturationNumber < maxSaturation) {
-            saturationNumber = probabilityExtraction(animalsOnLocation, getLuck(), saturationNumber);
+    public boolean isPredator() {
+        return predator;
+    }
+
+    public void setPredator(boolean predator) {
+        this.predator = predator;
+    }
+
+    public boolean isDead() {
+        return dead;
+    }
+
+    public void setDead(boolean dead) {
+        this.dead = dead;
+    }
+
+    public void eat(List<Animal> animalsOnLocation, List<Plant> plantOnLocation) {
+        if (isDead()) return;
+        if (getSaturationNumber() < getMaxSaturation()) {
+            setSaturationNumber(new Eat(this).probabilityEaten(animalsOnLocation, plantOnLocation, getSaturationNumber()));
         }
-        if (saturationNumber >= maxSaturation) {
-            setSaturation(true);
-            for (Animal animal : animalsOnLocation) {
-                if (getAnimalName().equals(animal.getAnimalName()) && isSaturation == animal.isSaturation && id != animal.getId()) {
-                    setSaturation(false);
-                    animal.setSaturation(false);
-                    setSaturationNumber(0);
-                    reproduce(animalsOnLocation, globalId);
-                }
-            }
+        setHunger(saturationNumber == 0);
+
+    }
+
+    public void reproduce(List<Animal> animalsOnLocation) {
+        if (getSaturationNumber() >= getMaxSaturation()) {
+            new Reproduce(this).numberReproduce(animalsOnLocation);
         }
     }
 
-    // слабый вариант создать новую таблицу и загрузить в нее, потом отправить назад, пока только для set, для list циклы
-    // https://www.coderanch.com/t/572287/java/ConcurrentModificationException-HashSet-recursion
-    public void reproduce(Set<Animal> animalsOnLocation, int id) {
-        int i = ThreadLocalRandom.current().nextInt(1, 3);
-
-        while (i > 0) {
-            animalsOnLocation.add(new Plant(9));
-            i--;
-        }
-    }
-
+    // не забыть про гусениц
     // здесь реализовать смерть животного
-    @Override
-    public void move(List<List<Set<Animal>>> location) {
+    public void move() {
 
     }
 
@@ -143,7 +143,7 @@ public abstract class Animal implements Reproduce, Eat, Move {
                 ", weight=" + weight +
                 ", speed=" + speed +
                 ", hunger=" + hunger +
-                ", isSaturation=" + isSaturation +
+                ", isSaturation=" + saturation +
                 ", saturationNumber=" + saturationNumber +
                 ", maxSaturation=" + maxSaturation +
                 ", luck=" + luck +

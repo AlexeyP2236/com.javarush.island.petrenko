@@ -1,6 +1,6 @@
-package animal.predator;
+package entity.animal.predator;
 
-import animal.Animal;
+import entity.animal.Animal;
 import title.NamesAnimal;
 
 import java.util.Map;
@@ -17,6 +17,7 @@ public class Boa extends Animal {
                 Map.entry(NamesAnimal.MOUSE, 40),
                 Map.entry(NamesAnimal.DUCK, 10)
         ));
+        setPredator(true);
     }
 
     public Boa(int id) {

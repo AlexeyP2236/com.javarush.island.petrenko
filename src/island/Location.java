@@ -1,20 +1,37 @@
 package island;
 
-import animal.Animal;
+import util.Clearing;
+import entity.animal.Animal;
+import entity.Plant;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Location {
 
 
-    // private int id;
-    public Set<Animal> animals = new HashSet<>();
+    public List<Plant> plants = new ArrayList<>();
+    public static List<Plant> plantsEat = new ArrayList<>();
+    public List<Animal> animals = new ArrayList<>();
 
     public Location(Animal animal) {
-       // id++;
         animals.add(animal);
     }
+
+    public void animalsEat(){
+        for (Animal animal : animals) {
+            animal.eat(animals, plants);
+        }
+        Clearing.plantsClearing(plants);
+        Clearing.animalClearing(animals);
+    }
+
+    public void animalsReproduce(){
+        for (int i = animals.size() - 1; i >= 0; i--) {
+            animals.get(i).reproduce(animals);
+        }
+    }
+
     public Location() {
     }
 }

@@ -1,6 +1,6 @@
-package animal.predator;
+package entity.animal.predator;
 
-import animal.Animal;
+import entity.animal.Animal;
 import title.NamesAnimal;
 
 import java.util.Map;
@@ -18,6 +18,7 @@ public class Fox extends Animal {
                 Map.entry(NamesAnimal.DUCK, 60),
                 Map.entry(NamesAnimal.CATERPILLAR, 40)
         ));
+        setPredator(true);
     }
 
     public Fox(int id) {

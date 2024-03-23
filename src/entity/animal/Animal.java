@@ -135,7 +135,6 @@ public abstract class Animal {
     }
 
     public void eat(List<Animal> animalsOnLocation, List<Plant> plantOnLocation) {
-        if (isDead()) return;
         if (getQuantitySaturation() < getMaxSaturation()) {
             setQuantitySaturation(new Eat(this).probabilityEaten(animalsOnLocation, plantOnLocation, getQuantitySaturation()));
         }
@@ -151,18 +150,19 @@ public abstract class Animal {
     // lock когда ходы у всех закончатся
     // обнулить насыщение
     public void move(Location[][] locations, List<Animal> animalsOnLocation, List<Plant> plantOnLocation, int height, int width) {
-        if (isDead() || isEndSpeed()) return;
-        if (this instanceof Caterpillar){
-            if (!isSaturation()){
+       // if (isDead() || isEndSpeed()) return;
+        if (this instanceof Caterpillar) {
+            if (!isSaturation()) {
                 setSaturation(true);
                 new Reproduce(this).reproduce(animalsOnLocation);
             }
             return;
         }
+        //тут думаю остановить и чтобы другие отработали
         // перепроверить
         eat(animalsOnLocation, plantOnLocation);
         reproduce(animalsOnLocation);
-        if (isHunger() && getQuantitySpeed() == 0){
+        if (isHunger() && getQuantitySpeed() == 0) {
             setDead(true);
             Clearing.addAnimalDead(this);
         } else if (getQuantitySpeed() == 0) {
@@ -171,7 +171,8 @@ public abstract class Animal {
         }
 
         //right
-        if (true){}
+        if (true) {
+        }
 
     }
 }

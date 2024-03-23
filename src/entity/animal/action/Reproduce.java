@@ -4,6 +4,7 @@ import entity.animal.Animal;
 import entity.animal.herbivore.*;
 import entity.animal.predator.*;
 import title.NamesAnimal;
+import util.Born;
 import util.Id;
 
 import java.util.Iterator;
@@ -54,7 +55,7 @@ public class Reproduce {
                 case NamesAnimal.BEAR -> new Bear(Id.next());
                 default -> throw new IllegalStateException("Unexpected value: " + animalPatent.getAnimalName());
             };
-            animalsOnLocation.add(animal);
+            Born.addBornThroughReproduction(animal);
             i--;
         }
     }

@@ -12,8 +12,8 @@ public class Island {
     public Island() {
     }
 
-    public Island(int width, int height) {
-        locationNew = new Location[width][height];
+    public Island(int height, int width) {
+        locationNew = new Location[height][width];
     }
 
     // для рандома можно сделать отдельную функцию и передать в конструктор, отдельно вставить траву
@@ -41,8 +41,9 @@ public class Island {
     public void test() {
         for (int i = 0; i < locationNew.length; i++) {
             for (int j = 0; j < locationNew[i].length; j++) {
-                locationNew[i][j].animalsEat();
-                locationNew[i][j].animalsReproduce();
+                locationNew[i][j].animalsMove(locationNew, i, j);
+//                locationNew[i][j].animalsEat();
+//                locationNew[i][j].animalsReproduce();
             }
         }
     }

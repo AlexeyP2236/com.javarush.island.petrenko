@@ -2,8 +2,10 @@ package entity.animal;
 
 import entity.animal.action.Reproduce;
 import entity.animal.action.Eat;
-import entity.animal.action.Move;
 import entity.Plant;
+import entity.animal.herbivore.Caterpillar;
+import island.Location;
+import util.Clearing;
 
 import java.util.*;
 
@@ -11,10 +13,12 @@ public abstract class Animal {
     private int id;
     private String animalName;
     private double weight;
+    private int quantitySpeed;
     private int speed;
+    private boolean endSpeed;
     private boolean hunger;
     private boolean saturation;
-    private double saturationNumber;
+    private double quantitySaturation;
     private double maxSaturation;
     private boolean predator;
     private boolean dead;
@@ -46,12 +50,28 @@ public abstract class Animal {
         this.weight = weight;
     }
 
+    public int getQuantitySpeed() {
+        return quantitySpeed;
+    }
+
+    public void setQuantitySpeed(int quantitySpeed) {
+        this.quantitySpeed = quantitySpeed;
+    }
+
     public int getSpeed() {
         return speed;
     }
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public boolean isEndSpeed() {
+        return endSpeed;
+    }
+
+    public void setEndSpeed(boolean endSpeed) {
+        this.endSpeed = endSpeed;
     }
 
     public boolean isHunger() {
@@ -70,12 +90,12 @@ public abstract class Animal {
         this.saturation = isSaturation;
     }
 
-    public double getSaturationNumber() {
-        return saturationNumber;
+    public double getQuantitySaturation() {
+        return quantitySaturation;
     }
 
-    public void setSaturationNumber(double saturationNumber) {
-        this.saturationNumber = saturationNumber;
+    public void setQuantitySaturation(double quantitySaturation) {
+        this.quantitySaturation = quantitySaturation;
     }
 
     public double getMaxSaturation() {
@@ -116,37 +136,42 @@ public abstract class Animal {
 
     public void eat(List<Animal> animalsOnLocation, List<Plant> plantOnLocation) {
         if (isDead()) return;
-        if (getSaturationNumber() < getMaxSaturation()) {
-            setSaturationNumber(new Eat(this).probabilityEaten(animalsOnLocation, plantOnLocation, getSaturationNumber()));
+        if (getQuantitySaturation() < getMaxSaturation()) {
+            setQuantitySaturation(new Eat(this).probabilityEaten(animalsOnLocation, plantOnLocation, getQuantitySaturation()));
         }
-        setHunger(saturationNumber == 0);
-
+        setHunger(quantitySaturation == 0);
     }
 
     public void reproduce(List<Animal> animalsOnLocation) {
-        if (getSaturationNumber() >= getMaxSaturation()) {
-            new Reproduce(this).numberReproduce(animalsOnLocation);
+        if (getQuantitySaturation() >= getMaxSaturation()) {
+            new Reproduce(this).reproduce(animalsOnLocation);
         }
     }
 
-    // не забыть про гусениц
-    // здесь реализовать смерть животного
-    public void move() {
+    // lock когда ходы у всех закончатся
+    // обнулить насыщение
+    public void move(Location[][] locations, List<Animal> animalsOnLocation, List<Plant> plantOnLocation, int height, int width) {
+        if (isDead() || isEndSpeed()) return;
+        if (this instanceof Caterpillar){
+            if (!isSaturation()){
+                setSaturation(true);
+                new Reproduce(this).reproduce(animalsOnLocation);
+            }
+            return;
+        }
+        // перепроверить
+        eat(animalsOnLocation, plantOnLocation);
+        reproduce(animalsOnLocation);
+        if (isHunger() && getQuantitySpeed() == 0){
+            setDead(true);
+            Clearing.addAnimalDead(this);
+        } else if (getQuantitySpeed() == 0) {
+            setEndSpeed(true);
+            return;
+        }
 
-    }
+        //right
+        if (true){}
 
-    @Override
-    public String toString() {
-        return "Animal{" +
-                "id=" + id +
-                ", animalName='" + animalName + '\'' +
-                ", weight=" + weight +
-                ", speed=" + speed +
-                ", hunger=" + hunger +
-                ", isSaturation=" + saturation +
-                ", saturationNumber=" + saturationNumber +
-                ", maxSaturation=" + maxSaturation +
-                ", luck=" + luck +
-                '}';
     }
 }

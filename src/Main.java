@@ -9,7 +9,7 @@ public class Main {
             for (int j = 0; j < island.locationNew[i].length; j++) {
                 int finalI = i;
                 int finalJ = j;
-                island.locationNew[i][j].animals.forEach(animal -> System.out.println(" гекс (" + (finalI) + " " + (finalJ) + ") " + animal.getAnimalName() + ", id " + animal.getId() + ", вес " + animal.getWeight() + ", насыщенность " + animal.getSaturationNumber()));
+                island.locationNew[i][j].animals.forEach(animal -> System.out.println(" гекс (" + (finalI) + " " + (finalJ) + ") " + animal.getAnimalName() + ", id " + animal.getId() + ", вес " + animal.getWeight() + ", насыщенность " + animal.getQuantitySaturation()));
                 System.out.println("-".repeat(20));
             }
         }
@@ -31,7 +31,7 @@ public class Main {
             for (int j = 0; j < island.locationNew[i].length; j++) {
                 int finalI = i;
                 int finalJ = j;
-                island.locationNew[i][j].animals.forEach(animal -> System.out.println(" гекс (" + (finalI) + " " + (finalJ) + ") " + animal.getAnimalName() + ", id " + animal.getId() + ", вес " + animal.getWeight() + ", насыщенность " + animal.getSaturationNumber()));
+                island.locationNew[i][j].animals.forEach(animal -> System.out.println(" гекс (" + (finalI) + " " + (finalJ) + ") " + animal.getAnimalName() + ", id " + animal.getId() + ", вес " + animal.getWeight() + ", насыщенность " + animal.getQuantitySaturation()));
                 System.out.println("-".repeat(20));
             }
         }

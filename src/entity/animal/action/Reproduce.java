@@ -17,7 +17,7 @@ public class Reproduce {
         this.animal = animal;
     }
 
-    public void numberReproduce(List<Animal> animalsOnLocation) {
+    public void reproduce(List<Animal> animalsOnLocation) {
         Iterator<Animal> iterator = animalsOnLocation.iterator();
         Animal animalPair;
         while (iterator.hasNext()) {
@@ -25,8 +25,8 @@ public class Reproduce {
             if (animal.getAnimalName().equals(animalPair.getAnimalName()) && animal.isSaturation() == animalPair.isSaturation() && animal.getId() != animalPair.getId()) {
                 animal.setSaturation(false);
                 animalPair.setSaturation(false);
-                animal.setSaturationNumber(0);
-                animalPair.setSaturationNumber(0);
+                animal.setQuantitySaturation(0);
+                animalPair.setQuantitySaturation(0);
                 numberReproduce(animalsOnLocation, animalPair);
                 break;
             }

@@ -11,7 +11,9 @@ public class Horse extends Animal {
         setAnimalName(NamesAnimal.HORSE);
         setWeight(400);
         setSpeed(4);
+        setQuantitySpeed(getSpeed());
         setMaxSaturation(60);
+        setMaxQuantity(20);
         setLuck(Map.ofEntries(
                 Map.entry(NamesAnimal.PLANT, 100)
         ));

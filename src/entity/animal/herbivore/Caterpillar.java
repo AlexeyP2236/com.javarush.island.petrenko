@@ -1,11 +1,11 @@
 package entity.animal.herbivore;
 
+import action.Reproduce;
 import entity.animal.Animal;
-import entity.animal.action.Reproduce;
+import island.information.GeneralInformation;
 import title.NamesAnimal;
 
-import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 public class Caterpillar extends Animal {
 
@@ -15,6 +15,7 @@ public class Caterpillar extends Animal {
         setWeight(0.01);
         setSpeed(0);
         setMaxSaturation(0);
+        setMaxQuantity(1000);
     }
 
     public Caterpillar(int id) {
@@ -22,7 +23,9 @@ public class Caterpillar extends Animal {
     }
 
     @Override
-    public void reproduce(List<Animal> animalsOnLocation) {
-        new Reproduce(this).reproduce(animalsOnLocation);
+    public void reproduce(Set<Animal> animalsOnLocation, GeneralInformation information) {
+        if(getMaxQuantity() >= information.getAnimalInformation(this)){
+            new Reproduce(this).reproduce(animalsOnLocation);
+        }
     }
 }

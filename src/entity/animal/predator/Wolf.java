@@ -10,7 +10,9 @@ public class Wolf extends Animal {
         setAnimalName(NamesAnimal.WOLF);
         setWeight(50);
         setSpeed(3);
+        setQuantitySpeed(getSpeed());
         setMaxSaturation(8);
+        setMaxQuantity(30);
         setLuck(Map.ofEntries(
                 Map.entry(NamesAnimal.HORSE, 10),
                 Map.entry(NamesAnimal.DEER, 15),

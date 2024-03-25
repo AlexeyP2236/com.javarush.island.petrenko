@@ -11,7 +11,9 @@ public class Bear extends Animal {
         setAnimalName(NamesAnimal.BEAR);
         setWeight(500);
         setSpeed(2);
+        setQuantitySpeed(getSpeed());
         setMaxSaturation(80);
+        setMaxQuantity(5);
         setLuck(Map.ofEntries(
                 Map.entry(NamesAnimal.BOA, 80),
                 Map.entry(NamesAnimal.FOX, 40),

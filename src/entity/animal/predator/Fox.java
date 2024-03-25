@@ -11,7 +11,9 @@ public class Fox extends Animal {
         setAnimalName(NamesAnimal.FOX);
         setWeight(8);
         setSpeed(2);
+        setQuantitySpeed(getSpeed());
         setMaxSaturation(2);
+        setMaxQuantity(30);
         setLuck(Map.ofEntries(
                 Map.entry(NamesAnimal.RABBIT, 70),
                 Map.entry(NamesAnimal.MOUSE, 90),

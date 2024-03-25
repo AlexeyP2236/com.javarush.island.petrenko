@@ -1,16 +1,19 @@
 package entity.animal;
 
-import entity.animal.action.Reproduce;
-import entity.animal.action.Eat;
+import action.Eat;
+import action.Move;
+import action.Reproduce;
 import entity.Plant;
-import entity.animal.herbivore.Caterpillar;
 import island.Location;
+import island.information.GeneralInformation;
 import util.Clearing;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public abstract class Animal {
-    private int id;
+    private final int id;
     private String animalName;
     private double weight;
     private int quantitySpeed;
@@ -20,12 +23,14 @@ public abstract class Animal {
     private boolean saturation;
     private double quantitySaturation;
     private double maxSaturation;
+    private int maxQuantity;
     private boolean predator;
-    private boolean dead;
+    private boolean deadOrEmpty;
     private Map<String, Integer> luck;
 
     public Animal(int id) {
         this.id = id;
+        this.quantitySpeed = getSpeed();
     }
 
     //getter and setter
@@ -106,6 +111,14 @@ public abstract class Animal {
         this.maxSaturation = maxSaturation;
     }
 
+    public int getMaxQuantity() {
+        return maxQuantity;
+    }
+
+    public void setMaxQuantity(int maxQuantity) {
+        this.maxQuantity = maxQuantity;
+    }
+
     public Map<String, Integer> getLuck() {
         return luck;
     }
@@ -126,53 +139,37 @@ public abstract class Animal {
         this.predator = predator;
     }
 
-    public boolean isDead() {
-        return dead;
+    public boolean isDeadOrEmpty() {
+        return deadOrEmpty;
     }
 
-    public void setDead(boolean dead) {
-        this.dead = dead;
+    public void setDeadOrEmpty(boolean deadOrEmpty) {
+        this.deadOrEmpty = deadOrEmpty;
     }
 
-    public void eat(List<Animal> animalsOnLocation, List<Plant> plantOnLocation) {
+    public void eat(Set<Animal> animalsOnLocation, List<Plant> plantOnLocation) {
         if (getQuantitySaturation() < getMaxSaturation()) {
             setQuantitySaturation(new Eat(this).probabilityEaten(animalsOnLocation, plantOnLocation, getQuantitySaturation()));
         }
         setHunger(quantitySaturation == 0);
     }
 
-    public void reproduce(List<Animal> animalsOnLocation) {
-        if (getQuantitySaturation() >= getMaxSaturation()) {
+    public void reproduce(Set<Animal> animalsOnLocation, GeneralInformation information) {
+        if (getQuantitySaturation() >= getMaxSaturation() && getMaxQuantity() >= information.getAnimalInformation(this)) {
             new Reproduce(this).reproduce(animalsOnLocation);
         }
     }
 
-    // lock когда ходы у всех закончатся
-    // обнулить насыщение
-    public void move(Location[][] locations, List<Animal> animalsOnLocation, List<Plant> plantOnLocation, int height, int width) {
-       // if (isDead() || isEndSpeed()) return;
-        if (this instanceof Caterpillar) {
-            if (!isSaturation()) {
-                setSaturation(true);
-                new Reproduce(this).reproduce(animalsOnLocation);
-            }
-            return;
-        }
-        //тут думаю остановить и чтобы другие отработали
-        // перепроверить
-        eat(animalsOnLocation, plantOnLocation);
-        reproduce(animalsOnLocation);
+    public void move(Location[][] locations, int height, int width) {
         if (isHunger() && getQuantitySpeed() == 0) {
-            setDead(true);
-            Clearing.addAnimalDead(this);
+            setDeadOrEmpty(true);
+            Clearing.addAnimalDeadOrEmpty(this);
+            return;
         } else if (getQuantitySpeed() == 0) {
             setEndSpeed(true);
             return;
         }
-
-        //right
-        if (true) {
-        }
-
+        new Move(this).randomMove(locations, height, width);
+        setQuantitySpeed(getQuantitySpeed() - 1);
     }
 }

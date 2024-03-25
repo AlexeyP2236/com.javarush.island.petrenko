@@ -12,7 +12,9 @@ public class Deer extends Animal {
         setAnimalName(NamesAnimal.DEER);
         setWeight(300);
         setSpeed(4);
+        setQuantitySpeed(getSpeed());
         setMaxSaturation(50);
+        setMaxQuantity(20);
         setLuck(Map.ofEntries(
                 Map.entry(NamesAnimal.PLANT, 100)
         ));

@@ -1,6 +1,7 @@
 package entity;
 
 public class Plant {
+
     private String plantName = "Растение";
     private double weight = 1;
     private boolean plantEaten;

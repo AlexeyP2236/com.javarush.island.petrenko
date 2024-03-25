@@ -11,7 +11,9 @@ public class Eagle extends Animal {
         setAnimalName(NamesAnimal.EAGLE);
         setWeight(6);
         setSpeed(3);
+        setQuantitySpeed(getSpeed());
         setMaxSaturation(1);
+        setMaxQuantity(20);
         setLuck(Map.ofEntries(
                 Map.entry(NamesAnimal.FOX, 10),
                 Map.entry(NamesAnimal.RABBIT, 90),

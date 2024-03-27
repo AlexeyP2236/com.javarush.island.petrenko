@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64b9011e-7a0f-48f1-ad77-e0fc80f6233a" name="Changes" comment="save 24.03.26">
-      <change afterPath="$PROJECT_DIR$/src/island/myThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/Reproduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Reproduce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Caterpillar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Caterpillar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/island/InitialEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/InitialEntities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/island/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/Island.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/island/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/Born.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/island/myThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/myThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,16 +39,16 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -118,29 +115,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>73</line>
+          <line>62</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>32</line>
+          <line>34</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>66</line>
+          <line>55</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="12" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

@@ -1,11 +1,12 @@
 package island;
 
-public class myThread extends Thread {
-    private final Location[][] locations;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-    public myThread(Location[][] locations) {
-        this.locations = locations;
-    }
+public class myThread extends Thread {
+ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+Island island = new Island();
 
 
 }

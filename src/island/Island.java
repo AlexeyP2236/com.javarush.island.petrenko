@@ -15,6 +15,9 @@ public class Island {
         locations = new Location[heightLocation][widthLocation];
     }
 
+    public Island() {
+    }
+
     public void initialIsland() {
         for (int i = 0; i < locations.length; i++) {
             for (int j = 0; j < locations[i].length; j++) {
@@ -25,34 +28,20 @@ public class Island {
         }
     }
 
-    //thread
+    //threads
     public Runnable threadActionAnimal = () -> {
         while (!stopActionAnimal) {
             actionAnimal();
-            information();
             checkCycle();
+            information();
         }
 
-//        try {
-//            wait();
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+//        stopActionAnimal = true;
     };
 
-    public Runnable checkCycle = () -> {
-        List<Animal> check = new ArrayList<>();
-        for (Location[] location : locations) {
-            for (Location location1 : location) {
-                check = location1.animals.stream().filter(Animal::isEndSpeed).toList();
-            }
-        }
-        if (check.isEmpty()) {
-            //stopActionAnimal = true;
-            // закончить цикл, подсчет и обнуление некоторых характеристик. После подсчета заново запуск локацию
-            System.out.println("End Cycle");
-        }
-    };
+    public Runnable threadEndCycle = this::endCycle;
+    public Runnable threadPostCycle = this::postPlant;
+    public Runnable threadInformation = this::information;
 
 
     public void actionAnimal() {
@@ -67,19 +56,13 @@ public class Island {
         List<Animal> check = new ArrayList<>();
         for (Location[] location : locations) {
             for (Location location1 : location) {
-                check = location1.animals.stream().filter(Animal::isEndSpeed).toList();
+                check = location1.animals.stream().filter(animal -> !animal.isEndSpeed()).toList();
             }
         }
         if (check.isEmpty()) {
             System.out.println("End Cycle");
             stopActionAnimal = true;
-//            try {
-//                threadActionAnimal.wait();
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
             // закончить цикл, подсчет и обнуление некоторых характеристик. После подсчета заново запуск локацию
-
         }
     }
 

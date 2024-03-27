@@ -22,6 +22,10 @@ public class Caterpillar extends Animal {
         super(id);
     }
 
+    public Caterpillar(int id, boolean endSpeed) {
+        super(id, endSpeed);
+    }
+
     @Override
     public void reproduce(Set<Animal> animalsOnLocation, GeneralInformation information) {
         if(getMaxQuantity() >= information.getAnimalInformation(this)){

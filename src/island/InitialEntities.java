@@ -35,7 +35,7 @@ public class InitialEntities {
             addAnimalsInLocation.add(new Buffalo(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(100);
+        value = new RandomIsland().randomValue(400);
         while (value > 0) {
             addAnimalsInLocation.add(new Caterpillar(Id.next()));
             value--;

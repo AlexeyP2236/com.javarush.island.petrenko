@@ -33,6 +33,11 @@ public abstract class Animal {
         this.quantitySpeed = getSpeed();
     }
 
+    public Animal(int id, boolean endSpeed) {
+        this.id = id;
+        this.endSpeed = endSpeed;
+    }
+
     //getter and setter
 
     public int getId() {

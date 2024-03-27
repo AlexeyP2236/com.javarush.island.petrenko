@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Island {
     public Location[][] locations;
+    public boolean stopActionAnimal;
 
     public Island(int heightLocation, int widthLocation) {
         locations = new Location[heightLocation][widthLocation];
@@ -24,6 +25,36 @@ public class Island {
         }
     }
 
+    //thread
+    public Runnable threadActionAnimal = () -> {
+        while (!stopActionAnimal) {
+            actionAnimal();
+            information();
+            checkCycle();
+        }
+
+//        try {
+//            wait();
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+    };
+
+    public Runnable checkCycle = () -> {
+        List<Animal> check = new ArrayList<>();
+        for (Location[] location : locations) {
+            for (Location location1 : location) {
+                check = location1.animals.stream().filter(Animal::isEndSpeed).toList();
+            }
+        }
+        if (check.isEmpty()) {
+            //stopActionAnimal = true;
+            // закончить цикл, подсчет и обнуление некоторых характеристик. После подсчета заново запуск локацию
+            System.out.println("End Cycle");
+        }
+    };
+
+
     public void actionAnimal() {
         for (int height = 0; height < locations.length; height++) {
             for (int width = 0; width < locations[height].length; width++) {
@@ -36,12 +67,19 @@ public class Island {
         List<Animal> check = new ArrayList<>();
         for (Location[] location : locations) {
             for (Location location1 : location) {
-               check = location1.animals.stream().filter(Animal::isEndSpeed).toList();
+                check = location1.animals.stream().filter(Animal::isEndSpeed).toList();
             }
         }
         if (check.isEmpty()) {
-            // закончить цикл, подсчет и обнуление некоторых характеристик. После подсчета заново запуск локацию
             System.out.println("End Cycle");
+            stopActionAnimal = true;
+//            try {
+//                threadActionAnimal.wait();
+//            } catch (InterruptedException e) {
+//                throw new RuntimeException(e);
+//            }
+            // закончить цикл, подсчет и обнуление некоторых характеристик. После подсчета заново запуск локацию
+
         }
     }
 
@@ -52,12 +90,13 @@ public class Island {
                     animal.setEndSpeed(false);
                     animal.setQuantitySpeed(animal.getSpeed());
                     animal.setSaturation(false);
+                    animal.setQuantitySaturation(0);
                 });
             }
         }
     }
 
-    public void postPlant(){
+    public void postPlant() {
         for (Location[] location : locations) {
             for (Location value : location) {
                 int number = 200 - value.plants.size();
@@ -65,11 +104,11 @@ public class Island {
                     value.plants.add(new Plant());
                     number--;
                 }
-
             }
         }
     }
-    public void test(){
+
+    public void test() {
         List<Animal> check = new ArrayList<>();
         for (Location[] location : locations) {
             for (Location location1 : location) {
@@ -80,6 +119,7 @@ public class Island {
             System.out.println("setSaturation(false)");
         }
     }
+
     public void information() {
         GeneralInformation generalInformation = new GeneralInformation();
         for (Location[] location : locations) {

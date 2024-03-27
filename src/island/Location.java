@@ -35,7 +35,7 @@ public class Location {
             animal.reproduce(animals, information);
             animal.move(locations, height, width);
         }
-        //information.printInformation();
+       // information.printInformation();
         Clearing.plantsClearing(plants);
         Clearing.animalClearing(animals);
         Reproduce.bornThroughReproduction(animals);
@@ -43,7 +43,7 @@ public class Location {
         information.clearInformation();
         plants.forEach(information::addPlantsInformation);
         animals.forEach(information::addAnimalsInformation);
-        //information.printInformation();
-        //System.out.println("-".repeat(20));
+      //  information.printInformation();
+      //  System.out.println("-".repeat(20));
     }
 }

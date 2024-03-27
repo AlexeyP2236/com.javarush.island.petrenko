@@ -48,7 +48,7 @@ public class Reproduce {
         int i = ThreadLocalRandom.current().nextInt(1, 3);
         while (i > 0) {
             Animal animal = switch (animalPair.getAnimalName()) {
-                case NamesAnimal.CATERPILLAR -> new Caterpillar(Id.next());
+                case NamesAnimal.CATERPILLAR -> new Caterpillar(Id.next(), true);
                 case NamesAnimal.MOUSE -> new Mouse(Id.next());
                 case NamesAnimal.DUCK -> new Duck(Id.next());
                 case NamesAnimal.RABBIT -> new Rabbit(Id.next());

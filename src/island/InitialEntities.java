@@ -7,14 +7,14 @@ import entity.animal.predator.*;
 import util.Id;
 import util.RandomIsland;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 public class InitialEntities {
-    public List<Plant> addPlantsInLocation = new ArrayList<>();
-    public Set<Animal> addAnimalsInLocation = new HashSet<>();
+    public List<Plant> addPlantsInLocation = new CopyOnWriteArrayList<>();
+    public Set<Animal> addAnimalsInLocation = new CopyOnWriteArraySet<>();
 
     {
         initialPlants();
@@ -24,84 +24,84 @@ public class InitialEntities {
     public void initialPlants() {
         int number = 200;
         while (number > 0) {
-            addPlantsInLocation.add(new Plant());
+            addPlantsInLocation.add(new Plant(Id.next()));
             number--;
         }
     }
 
     public void initialAnimal() {
-        int value = new RandomIsland().randomValue(2);
+        int value = new RandomIsland().randomValue(5);
         while (value > 0) {
             addAnimalsInLocation.add(new Buffalo(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(100);
+        value = new RandomIsland().randomValue(500);
         while (value > 0) {
             addAnimalsInLocation.add(new Caterpillar(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(3);
+        value = new RandomIsland().randomValue(10);
         while (value > 0) {
             addAnimalsInLocation.add(new Deer(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(20);
+        value = new RandomIsland().randomValue(100);
         while (value > 0) {
             addAnimalsInLocation.add(new Duck(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(14);
+        value = new RandomIsland().randomValue(70);
         while (value > 0) {
             addAnimalsInLocation.add(new Goat(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(5);
+        value = new RandomIsland().randomValue(25);
         while (value > 0) {
             addAnimalsInLocation.add(new Hog(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(3);
+        value = new RandomIsland().randomValue(10);
         while (value > 0) {
             addAnimalsInLocation.add(new Horse(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(50);
+        value = new RandomIsland().randomValue(250);
         while (value > 0) {
             addAnimalsInLocation.add(new Mouse(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(15);
+        value = new RandomIsland().randomValue(75);
         while (value > 0) {
             addAnimalsInLocation.add(new Rabbit(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(14);
+        value = new RandomIsland().randomValue(70);
         while (value > 0) {
             addAnimalsInLocation.add(new Sheep(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(2);
+        value = new RandomIsland().randomValue(4);
         while (value > 0) {
             addAnimalsInLocation.add(new Bear(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(4);
+        value = new RandomIsland().randomValue(15);
         while (value > 0) {
             addAnimalsInLocation.add(new Boa(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(3);
+        value = new RandomIsland().randomValue(10);
         while (value > 0) {
             addAnimalsInLocation.add(new Eagle(Id.next()));
             value--;
         }
 
-        value = new RandomIsland().randomValue(4);
+        value = new RandomIsland().randomValue(15);
         while (value > 0) {
             addAnimalsInLocation.add(new Fox(Id.next()));
             value--;
         }
-        value = new RandomIsland().randomValue(4);
+        value = new RandomIsland().randomValue(15);
         while (value > 0) {
             addAnimalsInLocation.add(new Wolf(Id.next()));
             value--;

@@ -5,7 +5,7 @@ import action.Move;
 import action.Reproduce;
 import entity.Plant;
 import island.Location;
-import island.information.GeneralInformation;
+import island.GeneralInformation;
 import util.Clearing;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 
 public abstract class Animal {
-    private final int id;
+    private final long id;
     private String animalName;
     private double weight;
     private int quantitySpeed;
@@ -26,21 +26,21 @@ public abstract class Animal {
     private int maxQuantity;
     private boolean predator;
     private boolean deadOrEmpty;
-    private Map<String, Integer> luck;
+    private Map<String, Integer> probabilityOfCatching;
 
-    public Animal(int id) {
+    public Animal(long id) {
         this.id = id;
         this.quantitySpeed = getSpeed();
     }
 
-    public Animal(int id, boolean endSpeed) {
+    public Animal(long id, boolean endSpeed) {
         this.id = id;
         this.endSpeed = endSpeed;
     }
 
     //getter and setter
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -124,16 +124,12 @@ public abstract class Animal {
         this.maxQuantity = maxQuantity;
     }
 
-    public Map<String, Integer> getLuck() {
-        return luck;
+    public Map<String, Integer> getProbabilityOfCatching() {
+        return probabilityOfCatching;
     }
 
-    public void setLuck(Map<String, Integer> luck) {
-        this.luck = luck;
-    }
-
-    public void setLuck(String s, Integer i) {
-        this.luck.put(s, i);
+    public void setProbabilityOfCatching(Map<String, Integer> probabilityOfCatching) {
+        this.probabilityOfCatching = probabilityOfCatching;
     }
 
     public boolean isPredator() {

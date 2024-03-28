@@ -1,7 +1,7 @@
 package entity.animal.herbivore;
 
 import entity.animal.Animal;
-import title.NamesAnimal;
+import config.NamesAnimal;
 
 import java.util.Map;
 
@@ -14,12 +14,12 @@ public class Horse extends Animal {
         setQuantitySpeed(getSpeed());
         setMaxSaturation(60);
         setMaxQuantity(20);
-        setLuck(Map.ofEntries(
+        setProbabilityOfCatching(Map.ofEntries(
                 Map.entry(NamesAnimal.PLANT, 100)
         ));
     }
 
-    public Horse(int id) {
+    public Horse(long id) {
         super(id);
     }
 }

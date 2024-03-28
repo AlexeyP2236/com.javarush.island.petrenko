@@ -1,4 +1,4 @@
-package util;
+package action;
 
 import entity.animal.Animal;
 import island.Location;

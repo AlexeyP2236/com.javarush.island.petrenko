@@ -8,9 +8,35 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/Eat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Eat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/Reproduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Reproduce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Buffalo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Caterpillar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Caterpillar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Deer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Goat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Goat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Hog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Hog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Horse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Horse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Mouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Rabbit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Sheep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/predator/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Bear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/predator/Boa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Boa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/predator/Eagle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Eagle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/predator/Fox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Fox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/predator/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Wolf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/island/InitialEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/InitialEntities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/island/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/Island.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/island/myThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/myThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/island/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/island/information/GeneralInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/GeneralInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/island/myThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/title/NamesAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/NamesAnimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Clearing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Clearing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Id.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Id.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Migration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Migration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,16 +65,17 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.MyThreads.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -113,36 +140,35 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.ConcurrentModificationException" package="java.util" />
           <option name="timeStamp" value="12" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/island/MyThread.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/island/Island.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/island/Island.java</url>
+          <line>41</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="island.Location" memberName="animals" />
+        <PinnedItemInfo parentTag="island.Island" memberName="locations" />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="((island.Location[][])((Island)this).locations)[0][0]" custom="island.Island,island.Location[][]" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package island.information;
+package island;
 
 import entity.Plant;
 import entity.animal.Animal;

@@ -3,15 +3,16 @@ package action;
 import entity.animal.Animal;
 import entity.animal.herbivore.*;
 import entity.animal.predator.*;
-import title.NamesAnimal;
+import config.NamesAnimal;
 import util.Id;
 
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Reproduce {
     private final Animal animal;
-    private static final Set<Animal> BORN_THROUGH_REPRODUCTION = new HashSet<>();
+    private static final Set<Animal> BORN_THROUGH_REPRODUCTION = new CopyOnWriteArraySet<>();
 
     public Reproduce(Animal animal) {
         this.animal = animal;

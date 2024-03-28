@@ -1,4 +1,4 @@
-package title;
+package config;
 
 public class NamesAnimal {
     public static final String WOLF = "Волк";

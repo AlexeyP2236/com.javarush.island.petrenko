@@ -3,14 +3,14 @@ package util;
 import entity.Plant;
 import entity.animal.Animal;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 public class Clearing {
-    private final static List<Plant> plantsEat = new ArrayList<>();
-    private final static Set<Animal> animalDead = new HashSet<>();
+    private final static List<Plant> plantsEat = new CopyOnWriteArrayList<>();
+    private final static Set<Animal> animalDead = new CopyOnWriteArraySet<>();
     private Clearing(){}
 
     public static void addPlantsEat(Plant plant) {

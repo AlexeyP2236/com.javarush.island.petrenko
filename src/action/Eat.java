@@ -47,7 +47,7 @@ public class Eat {
         int chance = ThreadLocalRandom.current().nextInt(100);
         for (Animal animalEaten : animalsOnLocation) {
             if (animalEaten.isDeadOrEmpty()) continue;
-            for (Map.Entry<String, Integer> luck : animal.getLuck().entrySet()) {
+            for (Map.Entry<String, Integer> luck : animal.getProbabilityOfCatching().entrySet()) {
                 if (luck.getKey().equals(animalEaten.getAnimalName()) && luck.getValue() >= chance) {
                     if (animalEaten.getWeight() >= animal.getMaxSaturation() - saturationNumber) {
                         saturationNumber = animal.getMaxSaturation();

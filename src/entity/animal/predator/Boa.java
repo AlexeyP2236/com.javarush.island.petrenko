@@ -1,7 +1,7 @@
 package entity.animal.predator;
 
 import entity.animal.Animal;
-import title.NamesAnimal;
+import config.NamesAnimal;
 
 import java.util.Map;
 
@@ -14,7 +14,7 @@ public class Boa extends Animal {
         setQuantitySpeed(getSpeed());
         setMaxSaturation(3);
         setMaxQuantity(30);
-        setLuck(Map.ofEntries(
+        setProbabilityOfCatching(Map.ofEntries(
                 Map.entry(NamesAnimal.RABBIT, 20),
                 Map.entry(NamesAnimal.MOUSE, 40),
                 Map.entry(NamesAnimal.DUCK, 10)
@@ -22,7 +22,7 @@ public class Boa extends Animal {
         setPredator(true);
     }
 
-    public Boa(int id) {
+    public Boa(long id) {
         super(id);
     }
 }

@@ -2,8 +2,8 @@ package entity.animal.herbivore;
 
 import action.Reproduce;
 import entity.animal.Animal;
-import island.information.GeneralInformation;
-import title.NamesAnimal;
+import island.GeneralInformation;
+import config.NamesAnimal;
 
 import java.util.Set;
 
@@ -18,11 +18,11 @@ public class Caterpillar extends Animal {
         setMaxQuantity(1000);
     }
 
-    public Caterpillar(int id) {
+    public Caterpillar(long id) {
         super(id);
     }
 
-    public Caterpillar(int id, boolean endSpeed) {
+    public Caterpillar(long id, boolean endSpeed) {
         super(id, endSpeed);
     }
 

@@ -3,7 +3,6 @@ package action;
 import entity.animal.Animal;
 import island.Location;
 import util.Clearing;
-import util.Migration;
 import util.RandomIsland;
 
 public class Move {

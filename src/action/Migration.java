@@ -7,11 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Migration {
-    //может сделать имена заглавными?
-    private static List<Animal> prepareAnimalsToMoveRight = new ArrayList<>();
-    private static List<Animal> prepareAnimalsToMoveLeft = new ArrayList<>();
-    private static List<Animal> prepareAnimalsToMoveUp = new ArrayList<>();
-    private static List<Animal> prepareAnimalsToMoveDown = new ArrayList<>();
+    private static final List<Animal> prepareAnimalsToMoveRight = new ArrayList<>();
+    private static final List<Animal> prepareAnimalsToMoveLeft = new ArrayList<>();
+    private static final List<Animal> prepareAnimalsToMoveUp = new ArrayList<>();
+    private static final List<Animal> prepareAnimalsToMoveDown = new ArrayList<>();
 
     public static void addPrepareAnimalsToMoveRight(Animal animal){
         prepareAnimalsToMoveRight.add(animal);

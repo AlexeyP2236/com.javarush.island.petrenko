@@ -108,11 +108,4 @@ public class InitialEntities {
         }
     }
 
-//    public void initialQuantityAnimal(int value, Animal animal) {
-//        value = new RandomIsland().randomValue(value);
-//        while (value > 0) {
-//            addAnimalsInLocation.add(animal);
-//            value--;
-//        }
-//    }
 }

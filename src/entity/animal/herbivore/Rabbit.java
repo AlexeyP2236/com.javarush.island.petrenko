@@ -7,7 +7,6 @@ import java.util.Map;
 
 public class Rabbit extends Animal {
 
-
     {
         setAnimalName(NamesAnimal.RABBIT);
         setWeight(2);

@@ -38,8 +38,6 @@ public abstract class Animal {
         this.endSpeed = endSpeed;
     }
 
-    //getter and setter
-
     public long getId() {
         return id;
     }

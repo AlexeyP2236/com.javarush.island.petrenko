@@ -5,11 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64b9011e-7a0f-48f1-ad77-e0fc80f6233a" name="Changes" comment="save 24.03.28">
-      <change afterPath="$PROJECT_DIR$/src/config/InitialValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/island/GeneralInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/GeneralInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/island/Island.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/Island.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/Migration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Migration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/Reproduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Reproduce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Buffalo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Buffalo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Caterpillar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Caterpillar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Deer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Deer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Hog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Hog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/herbivore/Rabbit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/herbivore/Rabbit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/predator/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Bear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/predator/Boa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Boa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/animal/predator/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/animal/predator/Wolf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/island/InitialEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/InitialEntities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/island/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/island/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/RandomIsland.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/RandomIsland.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +54,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "AlexeyP2236"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AlexeyP2236&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -148,19 +159,6 @@
           <url>file://$PROJECT_DIR$/src/island/MyThread.java</url>
           <line>37</line>
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/island/Island.java</url>
-          <line>42</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

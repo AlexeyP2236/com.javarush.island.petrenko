@@ -12,19 +12,19 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Reproduce {
     private final Animal animal;
-    private static final Set<Animal> BORN_THROUGH_REPRODUCTION = new CopyOnWriteArraySet<>();
+    private static final Set<Animal> bornThroughReproduction = new CopyOnWriteArraySet<>();
 
     public Reproduce(Animal animal) {
         this.animal = animal;
     }
 
     public static void addBornThroughReproduction(Animal animal) {
-        BORN_THROUGH_REPRODUCTION.add(animal);
+        bornThroughReproduction.add(animal);
     }
 
     public static void bornThroughReproduction(Set<Animal> animals) {
-        animals.addAll(BORN_THROUGH_REPRODUCTION);
-        BORN_THROUGH_REPRODUCTION.clear();
+        animals.addAll(bornThroughReproduction);
+        bornThroughReproduction.clear();
     }
 
     public void reproduce(Set<Animal> animalsOnLocation) {

@@ -6,6 +6,7 @@ import config.NamesAnimal;
 import java.util.Map;
 
 public class Wolf extends Animal {
+
     {
         setAnimalName(NamesAnimal.WOLF);
         setWeight(50);

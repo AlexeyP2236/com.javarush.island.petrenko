@@ -7,7 +7,6 @@ import java.util.Map;
 
 public class Deer extends Animal {
 
-
     {
         setAnimalName(NamesAnimal.DEER);
         setWeight(300);

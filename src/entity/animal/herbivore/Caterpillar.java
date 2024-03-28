@@ -9,7 +9,6 @@ import java.util.Set;
 
 public class Caterpillar extends Animal {
 
-
     {
         setAnimalName(NamesAnimal.CATERPILLAR);
         setWeight(0.01);

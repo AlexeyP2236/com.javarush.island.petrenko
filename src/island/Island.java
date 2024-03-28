@@ -1,5 +1,6 @@
 package island;
 
+import config.InitialValue;
 import entity.Plant;
 import entity.animal.Animal;
 import util.Id;
@@ -9,8 +10,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Island implements Runnable {
     public Location[][] locations;
-    public static boolean stopActionAnimal;
-    public static boolean allDead;
+    public boolean stopActionAnimal = false;
+    public boolean allDead = false;
 
     public Island(int heightLocation, int widthLocation) {
         locations = new Location[heightLocation][widthLocation];
@@ -49,13 +50,12 @@ public class Island implements Runnable {
             allDead = true;
         }
         if (checkEndCycle.isEmpty()) {
-            System.out.println("End Cycle");
-            stopActionAnimal = true;
             try {
-                Thread.sleep(200);
+                Thread.sleep((int)(InitialValue.INFORMATION_INTERVAL_IN_SECONDS * 1000));
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            stopActionAnimal = true;
         }
     }
 
@@ -95,13 +95,18 @@ public class Island implements Runnable {
         generalInformation.printInformation();
     }
 
+    public Runnable information = () -> {
+        while (!allDead) {
+            information();
+        }
+    };
+
     @Override
     public void run() {
         while (!allDead) {
             actionAnimal();
             checkCycle();
             if (stopActionAnimal) {
-                information();
                 endCycle();
                 postPlant();
                 stopActionAnimal = false;

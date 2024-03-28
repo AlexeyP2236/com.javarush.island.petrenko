@@ -1,5 +1,6 @@
 package island;
 
+import config.InitialValue;
 import entity.Plant;
 import entity.animal.Animal;
 import entity.animal.herbivore.*;
@@ -82,6 +83,11 @@ public class GeneralInformation {
                 + " Лиса: " + totalFox
                 + " Волк: " + totalWolf
         );
+        try {
+            Thread.sleep((int)(InitialValue.INFORMATION_INTERVAL_IN_SECONDS * 1000));
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public int getAnimalInformation(Animal animal) {
